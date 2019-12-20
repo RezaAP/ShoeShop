@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
         myFragment = inflater.inflate(R.layout.fragment_home,container,false);
         listCategory = myFragment.findViewById(R.id.list_brandsepatu);
         listCategory.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(container.getContext());
+        layoutManager = new GridLayoutManager(container.getContext(),3);
         listCategory.setLayoutManager(layoutManager);
 
 //        backBtn();
