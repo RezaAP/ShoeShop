@@ -33,18 +33,18 @@
                     android:text="Sepatu"
                     />
 
-                <TextView
-                    android:id="@+id/tv_harga_sepatu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Harga Sepatu"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_harga_sepatu"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Harga Sepatu"-->
+<!--                    />-->
 
                 <TextView
-                    android:id="@+id/tv_jumlah_pesanan"
+                    android:id="@+id/tvSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jumlah Pesanan"
+                    android:text="Ukuran"
                     />
 
             </LinearLayout>
