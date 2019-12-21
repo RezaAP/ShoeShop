@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class Shoes {
 
-    public String Name;
-    public String Image;
-    public String Price;
+    private String Name;
+    private String Image;
+    private String Price;
 
 
     public Shoes(){
