@@ -49,10 +49,21 @@
         app:layout_constraintTop_toBottomOf="@id/nama_sepatu"
         android:text="Harga"
         android:id="@+id/harga_sepatu"
-        android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="30dp"
         android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/harga_sepatu"
+        android:text="Description"
+        android:id="@+id/desc_sepatu"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+        android:textSize="14sp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

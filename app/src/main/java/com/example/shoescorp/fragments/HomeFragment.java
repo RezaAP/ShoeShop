@@ -97,6 +97,7 @@ public class HomeFragment extends Fragment {
                         startGame.putExtra("Name", model.getName());
                         startGame.putExtra("image", model.getImage());
                         startGame.putExtra("Price", model.getPrice());
+                        startGame.putExtra("Desc", model.getDesc());
                         startActivity(startGame);
                     }
                 });

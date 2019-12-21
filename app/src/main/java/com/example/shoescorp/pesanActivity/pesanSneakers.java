@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
 
 public class pesanSneakers extends AppCompatActivity {
 
-    TextView name, price;
+    TextView name, price, desc;
     ImageView image;
 
     @Override
@@ -21,15 +21,18 @@ public class pesanSneakers extends AppCompatActivity {
 
         name = this.findViewById(R.id.nama_sepatu);
         price = this.findViewById(R.id.harga_sepatu);
+        desc = this.findViewById(R.id.desc_sepatu);
         image = this.findViewById(R.id.image_sepatu);
 
         Bundle bundle = getIntent().getExtras();
         String urlGambar = bundle.getString("image");
         String getNama = bundle.getString("Name");
+        String getDesc = bundle.getString("Desc");
         String getHarga = bundle.getString("Price");
 
         name.setText(getNama);
         price.setText(getHarga);
+        desc.setText(getDesc);
         Picasso.with(this)
                 .load(urlGambar)
                 .into(image);

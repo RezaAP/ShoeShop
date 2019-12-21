@@ -10,16 +10,17 @@ public class Shoes {
     private String Name;
     private String Image;
     private String Price;
-
+    private String Desc;
 
     public Shoes(){
 
     }
 
-    public Shoes(String name, String image, String price) {
+    public Shoes(String name, String image, String price, String desc) {
         this.Name = name;
         this.Image = image;
         this.Price = price;
+        this.Desc = desc;
     }
 
     public String getName() {
@@ -46,12 +47,21 @@ public class Shoes {
         Price = price;
     }
 
+    public String getDesc() {
+        return Desc;
+    }
+
+    public void setDesc(String desc) {
+        Desc = desc;
+    }
+
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("Name", Name);
         result.put("Image", Image);
         result.put("Price", Price);
+        result.put("Desc", Desc);
         return result;
     }
 }
