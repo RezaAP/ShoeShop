@@ -7,16 +7,19 @@ import java.util.Map;
 
 public class Shoes {
 
-    private String Name;
-    private String Image;
+    public String Name;
+    public String Image;
+    public String Price;
+
 
     public Shoes(){
 
     }
 
-    public Shoes(String name, String image) {
-        Name = name;
-        Image = image;
+    public Shoes(String name, String image, String price) {
+        this.Name = name;
+        this.Image = image;
+        this.Price = price;
     }
 
     public String getName() {
@@ -35,11 +38,20 @@ public class Shoes {
         Image = image;
     }
 
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
+    }
+
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("Name", Name);
         result.put("Image", Image);
+        result.put("Price", Price);
         return result;
     }
 }

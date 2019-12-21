@@ -20,10 +20,12 @@ import android.widget.ImageButton;
 import com.example.shoescorp.Class.Shoes;
 import com.example.shoescorp.Interface.ItemClickListener;
 import com.example.shoescorp.R;
+import com.example.shoescorp.pesanActivity.pesanSneakers;
 import com.example.shoescorp.view_holder.ShoesViewHolder;
 //import com.firebase.client.annotations.Nullable;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 //import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.common.internal.service.Common;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -87,16 +89,17 @@ public class HomeFragment extends Fragment {
                         .load(model.getImage())
                         .into(viewHolder.category_image);
 
-//                viewHolder.setItemClicklistener(new ItemClicklistener() {
-//                    @Override
-//                    public void onClick(View view, int position, boolean isLongClick) {
-//                        //Toast.makeText(getActivity(), String.format("%s|%s",adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
-//                        Intent startGame = new Intent(getActivity(),Start.class);
-//                        Common.categoryId = adapter.getRef(position).getKey();
-//                        Common.categoryName = model.getName();
-//                        startActivity(startGame);
-//                    }
-//                });
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        //Toast.makeText(getActivity(), String.format("%s|%s",adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
+                        Intent startGame = new Intent(getActivity(), pesanSneakers.class);
+                        startGame.putExtra("Name", model.getName());
+                        startGame.putExtra("image", model.getImage());
+                        startGame.putExtra("Price", model.getPrice());
+                        startActivity(startGame);
+                    }
+                });
             }
         };
         adapter.notifyDataSetChanged();
