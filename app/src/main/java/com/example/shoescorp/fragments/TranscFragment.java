@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -33,7 +34,7 @@ public class TranscFragment extends Fragment {
     RecyclerView listCategory;
     RecyclerView.LayoutManager layoutManager;
 
-    FirebaseRecyclerAdapter<Shoes, ShoesViewHolder> adapter;
+    FirebaseRecyclerAdapter<Pesan, PesananViewHolder> adapter;
     FirebaseDatabase database;
     DatabaseReference categories;
 
@@ -55,10 +56,10 @@ public class TranscFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        myFragment = inflater.inflate(R.layout.fragment_home,container,false);
-        listCategory = myFragment.findViewById(R.id.list_brandsepatu);
+        myFragment = inflater.inflate(R.layout.fragment_transc,container,false);
+        listCategory = myFragment.findViewById(R.id.list_pesan);
         listCategory.setHasFixedSize(true);
-        layoutManager = new GridLayoutManager(container.getContext(),3);
+        layoutManager = new LinearLayoutManager(container.getContext());
         listCategory.setLayoutManager(layoutManager);
         loadCategories();
         return myFragment;
@@ -72,9 +73,9 @@ public class TranscFragment extends Fragment {
                 categories
         ){
             @Override
-            protected void pesananViewHolder(PesananViewHolder viewHolder, final Pesan model, int i) {
+            protected void populateViewHolder(PesananViewHolder viewHolder, final Pesan model, int i) {
                 viewHolder.tv_nama_sepatu.setText(model.getNamePesan());
-                viewHolder.tvSize.setText(model.getNamePesan());
+                viewHolder.tvSize.setText(model.getSize());
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {

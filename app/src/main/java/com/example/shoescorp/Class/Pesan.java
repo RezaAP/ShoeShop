@@ -9,6 +9,10 @@ public class Pesan {
     private String NamePesan;
     private String Size;
 
+    public Pesan (){
+
+    }
+
     public Pesan(String namePesan, String size){
         this.NamePesan = namePesan;
         this.Size = size;
